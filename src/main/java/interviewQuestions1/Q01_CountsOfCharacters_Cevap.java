@@ -1,5 +1,6 @@
 package interviewQuestions1;
 
+import java.awt.*;
 import java.util.Scanner;
 
 public class Q01_CountsOfCharacters_Cevap {
@@ -13,30 +14,28 @@ public class Q01_CountsOfCharacters_Cevap {
 
 
     public static void main(String[] args) {
+
         Scanner scan = new Scanner(System.in);
-        System.out.println("Lutfen bir cumle yaziniz");
-        String cumle = scan.nextLine().toLowerCase();
-        String arr[] = cumle.split("");
-        String ch = "";
-        String allCh = "";
+        System.out.print("Enter a string: ");
+        String userString = scan.nextLine().toLowerCase();
+
+        String strArr[] = userString.split("");
+        String newStr = "";
         int count = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            if (!ch.contains(arr[i])) {
-                ch = arr[i];
-            }
-            for (String w : arr) {
-                if (w.equals(ch)) {
-                        count++;
+        for (String w : strArr) {
+            for (String s : strArr) {
+                if (w.equals(s)) {
+                    count++;
                 }
             }
-            if(!allCh.contains(ch)) {
-                allCh += ch;
-                System.out.println(ch + " elemani Array'de " + count + " adet vardir");
-
+            if (!newStr.contains(w)) {
+                newStr += w;
+                System.out.print(w + " = " + count + ", ");
             }
             count = 0;
         }
+
 
     }
 

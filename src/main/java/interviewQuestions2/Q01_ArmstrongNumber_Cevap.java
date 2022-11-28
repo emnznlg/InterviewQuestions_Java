@@ -18,17 +18,20 @@ public class Q01_ArmstrongNumber_Cevap {
 
     public static void armstrongBul() {
         Scanner scan = new Scanner(System.in);
+        System.out.println("Enter a 3 digits number: ");
+        int num = scan.nextInt();
         int sum = 0;
-        System.out.println("Lutfen 3 basamakli bir sayi giriniz");
-        int sayi = scan.nextInt();
-        String sayiStr = String.valueOf(sayi);
-        for (int i = 0; i < sayiStr.length(); i++) {
-            int sayiInt = Integer.parseInt(sayiStr.substring(i, i + 1));
-            sum += (sayiInt * sayiInt * sayiInt);
+        String numStr = String.valueOf(num);
+
+        for (int i = 0; i < numStr.length(); i++) {
+            sum += Math.pow(Integer.parseInt(numStr.substring(i, i + 1)), 3);
         }
 
-        String sonuc = (sayi == sum) ? "Armstrongdur" : "Armstrong degildir";
-        System.out.println(sonuc);
+        if (sum == num) {
+            System.out.println("Armstrong number");
+        }else {
+            System.out.println("Not Armstrong number");
+        }
 
     }
 

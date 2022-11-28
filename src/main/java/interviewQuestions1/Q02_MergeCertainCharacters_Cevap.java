@@ -7,25 +7,27 @@ public class Q02_MergeCertainCharacters_Cevap {
     public static void main(String[] args) {
 
         /*
-             * Kulanicidan alinan bir Stringin ilk ve son harfini yine kullanicidan alinan sayi kadar
-             * return eden metod yaziniz
-             *
-             * ornek:  input            output
-             *         elma  2           eaea
-             *         army  3           ayayay
+         * Kulanicidan alinan bir Stringin ilk ve son harfini yine kullanicidan alinan sayi kadar
+         * return eden metod yaziniz
+         *
+         * ornek:  input            output
+         *         elma  2           eaea
+         *         army  3           ayayay
          */
 
+
         Scanner scan = new Scanner(System.in);
-        System.out.println("Lutfen bir kelime giriniz");
+        System.out.println("String giriniz:");
         String str = scan.nextLine();
         System.out.println("Tekrar sayisini giriniz");
         int tekrar = scan.nextInt();
-
-        System.out.println(stringiOlusturVeDondur(str, tekrar));
+        ilkSonChTekrarliYazdir(str,tekrar);
     }
 
-    public static String stringiOlusturVeDondur(String str, int tekrar) {
-        return (str.substring(0,1) + str.substring(str.length()-1)).repeat(tekrar);
+    public static void ilkSonChTekrarliYazdir(String str, int tekrar) {
+        char ilkCh = str.charAt(0);
+        char sonCh = str.charAt(str.length() - 1);
+        System.out.println(("" + ilkCh + sonCh).repeat(tekrar));
     }
 
 }

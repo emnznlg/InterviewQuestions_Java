@@ -10,22 +10,24 @@ public class Q03_PrimeNumber_Cevap {
             Kullanıcıdan pozitif bir sayı girmesini isteyin ve asal olup olmadığını kontrol edin
         */
 
+
         Scanner scan = new Scanner(System.in);
-        System.out.println("Lutfen pozitif bir tamsayi giriniz");
+        System.out.println("sayi giriniz");
         int sayi = scan.nextInt();
-        int counter = 0;
+        boolean asalMi = true;
 
-        for(int i = 1; i <= sayi; i++) {
-            if(sayi != 1) {
-                if(sayi%i == 0) counter++;
+        if (sayi >= 2) {
+            for (int i = 2; i < sayi; i++) {
+                if (sayi % i == 0) {
+                    asalMi = false;
+                    break;
+                }
             }
+        } else {
+            asalMi = false;
         }
-
-        if(counter == 2) {
-            System.out.println("Asal sayidir.");
-        }else {
-            System.out.println("Asal sayi degildir");
-        }
+        String sonuc = asalMi ? "Sayi asaldir" : "Sayi asal degildir";
+        System.out.println(sonuc);
 
     }
 
