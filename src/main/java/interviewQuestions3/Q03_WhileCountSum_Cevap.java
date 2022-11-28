@@ -12,21 +12,17 @@ public class Q03_WhileCountSum_Cevap {
         // ".. adet sayi girdin, toplami..." yazdirin
 
         Scanner scan = new Scanner(System.in);
-
-        int sayi = 0;
-        int toplam = 0;
-        int sayac = 0;
-        while (sayac < 10 && toplam < 500) {
-            System.out.println("Lutfen toplamak istediginiz sayilari giriniz :");
-            sayi = scan.nextInt();
-            toplam += sayi;
-            sayac++;
-        }
-
-        if (sayac < 10 && toplam < 500) {
-            System.out.println(sayac + " adet sayi girdiniz. Toplami :" + toplam);
-        } else
-            System.out.println("bu kadar sayi yeter " + sayac + " adet sayi girdiniz. Toplami :" + toplam);
+        int count = 0;
+        int sum = 0;
+        do {
+            System.out.println("Sayi gir:");
+            int sayi = scan.nextInt();
+            if (sum < 500 || count != 10) {
+                sum += sayi;
+                count++;
+            }
+        } while (sum < 500 && count != 10);
+        System.out.println(count + " adet sayi girdin, toplami " + sum + " etti...");
 
 
     }
