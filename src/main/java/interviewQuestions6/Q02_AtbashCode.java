@@ -8,4 +8,23 @@ public class Q02_AtbashCode {
       "zyxwvutsrqponmlkjihgfedcba";
      */
 
+    public static void main(String[] args) {
+
+        String cumle = "Ali ata bak".toLowerCase();
+        String str = "abcdefghijklmnopqrstuvwxyz";
+
+        char cumleArr[] = cumle.toCharArray();
+        StringBuilder cumleRev = new StringBuilder();
+
+        for (char w : cumleArr) {
+            if (str.indexOf(w) == -1) {
+                cumleRev.append(" ");
+            } else {
+                cumleRev.append((char) ('z' - str.indexOf(w)));
+            }
+        }
+        System.out.println(cumleRev);
+    }
+
+
 }

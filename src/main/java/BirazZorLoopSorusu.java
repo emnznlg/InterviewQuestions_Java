@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class BirazZorLoopSorusu {
@@ -19,20 +21,21 @@ public class BirazZorLoopSorusu {
            ABCDEDCBA
         */
 
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Harf gir");
-        char harf = scan.next().charAt(0);
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Harf gir: ");
+        char harf = input.next().charAt(0);
 
         for (int i = 'A'; i <= harf; i++) {
             for (int j = 'A'; j <= i; j++) {
                 System.out.print((char) j);
             }
-            for (int k = i - 1; k >= 'A'; k--) {
-                System.out.print((char) k);
+            for (int j = i - 1; j >= 'A'; j--) {
+                System.out.print((char) j);
             }
             System.out.println();
         }
-
     }
+
 
 }
